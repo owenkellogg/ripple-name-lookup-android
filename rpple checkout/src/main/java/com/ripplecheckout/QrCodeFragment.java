@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import com.onbarcode.barcode.android.*;
 
 public class QrCodeFragment extends Fragment {
     public QrCodeFragment(){
@@ -18,7 +17,11 @@ public class QrCodeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_example, container, false);
         wireUpButton(rootView);
-        return rootView;
+
+        AndroidBarcodeView barcodeView = new AndroidBarcodeView(getActivity().getApplicationContext());
+
+        return barcodeView;
+        //return rootView;
     }
 
     void back() {
